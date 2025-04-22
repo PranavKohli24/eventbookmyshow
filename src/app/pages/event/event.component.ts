@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { EventService } from '../../service/event.service';
 import { Observable } from 'rxjs';
@@ -18,6 +18,9 @@ export class EventComponent {
   eventData:Observable<IEvent>=new Observable<IEvent>;
   events$:Observable<IEvent[]>=new Observable<IEvent[]>;
 
+  @ViewChild('model') model:ElementRef|undefined;
+  members:any
+
   constructor(){
     this.activatedRoute.params.subscribe((res:any)=>{
       console.log('hello',res)
@@ -33,6 +36,20 @@ export class EventComponent {
     
 
   // }
+
+  openModel(){
+    if(this.model){
+
+      this.model.nativeElement.style.display='block';
+    }
+  }
+
+  closeModel(){
+    if(this.model){
+
+      this.model.nativeElement.style.display='none';
+    }
+  }
 
 
 }

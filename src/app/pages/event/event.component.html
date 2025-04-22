@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="col-6 text-end">
-                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Book Now</button>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" (click)="openModel()">Book Now</button>
                 </div>
                 <div class="col-6">
                   Start Time: {{EventData.startDate |date:'dd-MMM-yyyy'}}
@@ -36,7 +36,7 @@
             
             </div>
             <div class="col-4">
-              <h3>Events By __</h3>
+              <h3>Events By {{EventData.organizerName}}</h3>
               <div class="row">
                 @for(item of events$|async; track $index){
                   <div class="col-12 pt-1">
@@ -55,3 +55,78 @@
         </div> 
     </div>
 </section>
+
+<div class="modal" id="myModal" #model>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Book Ticket</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <div class="row">
+            <div class="col-12">
+              <table>
+                <thead>
+                  <tr>
+                    <td>
+                      <input type="text" class="form-control" placeholder="Name">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" placeholder="Age">
+                    </td>
+                    <td>
+                      <select class="form-select">
+                        <option value="">Select Indentity Proof</option>
+                        <option value="Aadhar Card">Aadhar Card</option>
+                        <option value="Pan Card">Pan Card</option>
+                      </select>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" placeholder="Car No">
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" placeholder="Mobile No">
+                    </td>
+                    <td>
+                     <button class="btn btn-sm btn-primary">Add</button>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td> 
+
+                  </tr>
+                  <tr>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>test</td> 
+                    
+                  </tr>
+                </tbody>
+                
+              </table>
+            </div>
+          </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-success" >Book Ticket</button>
+      </div>
+
+    </div>
+  </div>
+</div>

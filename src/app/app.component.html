@@ -36,9 +36,17 @@
         
       </div>
       <div class="d-flex align-items-center">
-        <button   type="button" class="btn btn-success px-3 me-2" data-bs-toggle="modal" data-bs-target="#myModal">
-          Login
-        </button>
+        @if(userObj.UserId==0){
+
+          <button   type="button" class="btn btn-success px-3 me-2"  (click)="openPopup()">
+            Login
+          </button>
+        }@else {
+          <!-- <span>{{userObj['contactNo']}}</span> -->
+          <button   type="button" class="btn btn-white px-3 me-2"  (click)="LogOff()">
+            LogOut
+          </button>
+        }
          
       </div> 
       <!-- Collapsible wrapper -->
@@ -47,3 +55,108 @@
   </nav>
 
 <router-outlet />
+
+<div class="modal" id="myModal" #model>
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closePopup()"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        @if(isLoginForm){
+          <form id="loginFrm">
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+              
+               
+            </div>
+
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0" >Login </p>
+            </div>
+            <section>
+
+            </section>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter your contactNo" name="Email" [(ngModel)]="loginObj.ContactNo"/>
+              <label class="form-label" for="form3Example3">Contact Number </label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <input type="password" id="form3Example4" class="form-control form-control-lg"
+                placeholder="Enter password" name="Password" [(ngModel)]="loginObj.Password"/>
+              <label class="form-label" for="form3Example4">Password</label>
+            </div>
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onLogin()">Login</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0" (click)="isLoginForm=false">Don't have an account? <a href="#!" class="link-danger"
+                  >Register</a></p>
+            </div>
+
+          </form>
+        }@else {
+          <form id="registerFrm">
+            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+              <p class="lead fw-normal mb-0 me-3"> </p>
+              
+            </div>
+
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0">Register</p>
+            </div>
+            <section>
+
+            </section>
+            <!-- Email input -->
+            <div class="form-outline ">
+              <input type="email" id="form3Example3" name="Email" [(ngModel)]="userObj.Email" class="form-control form-control-lg"
+                placeholder="Enter email" />
+              <label class="form-label" for="form3Example3">Email address</label>
+            </div>
+            <div class="form-outline ">
+              <input type="text" id="form3Example3" name="Name" [(ngModel)]="userObj.Name" class="form-control form-control-lg"
+                placeholder="Enter Full Name" />
+              <label class="form-label" for="form3Example3">Full Name</label>
+            </div> 
+            <div class="form-outline ">
+              <input type="text" id="form3Example3" name="ContactNo" [(ngModel)]="userObj.ContactNo" class="form-control form-control-lg"
+                placeholder="Enter Contact" />
+              <label class="form-label" for="form3Example3">ContactNumber</label>
+            </div> 
+            <div class="form-outline">
+              <input type="password" id="form3Example4" name="Password" [(ngModel)]="userObj.Password" class="form-control form-control-lg"
+                placeholder="Enter password" />
+              <label class="form-label" for="form3Example4">Password</label>
+            </div> 
+           
+
+            <div class="text-center text-lg-start mt-2 pt-2">
+              <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="onRegister()">Register</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0" (click)="isLoginForm=true">If You Alreay Have an Account? <a  class="link-danger"
+                  >Login</a></p> 
+            </div>
+
+          </form>
+        }
+          
+           
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
