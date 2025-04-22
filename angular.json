@@ -79,6 +79,7 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
+              
               {
                 "glob": "**/*",
                 "input": "public"
@@ -92,6 +93,9 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
