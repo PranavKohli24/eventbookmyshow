@@ -42,4 +42,8 @@ export class EventService {
   book(obj:any){
     return this.http.post<IAPIResponse>(`${this.apiUrl}bookevent`,obj)
   }
+
+  GetBookingsByCustomer(id:number){
+    return this.http.get<IAPIResponse>(`${this.apiUrl}GetBookingsByCustomer?customerId=${id}`)
+  }
 }

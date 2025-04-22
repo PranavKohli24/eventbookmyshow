@@ -1,12 +1,12 @@
 import { Component, ElementRef, ViewChild, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { IAPIResponse, User } from './model/model';
 import { FormsModule } from '@angular/forms';
 import { EventService } from './service/event.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,FormsModule],
+  imports: [RouterOutlet,FormsModule,RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
