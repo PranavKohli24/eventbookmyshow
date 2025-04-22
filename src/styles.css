@@ -1,39 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
-.bg-light  {
-    background-color: #e82a89 !important;
-   
-   }
-   .btn {
-    background-color: #7a1354 !important;
-   }
-   .nav-link {
-    color: #ffff !important;
-    font-weight: 700;
-    font-size: 1.2rem;
-   }
-   p {
-    font-size: 0.8rem;
-   }
-
-   .card-body {
-    background-color: #6c738f !important;
-    color: white !important;
-   }
-    .book-div {
-        padding: 80px 0;
-    }
-
-     .card-img-top {
-        height: 210px !important;
-     }
-     .modal .modal-dialog {
+/* Sleek, Modern UI with Gray, Black, and Blue */
+.bg-light {
+    background-color: #f1f3f5 !important; /* Soft light gray */
+  }
+  
+  .btn {
+    background-color: #4a6a8c !important; /* Muted blue-gray */
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(74, 106, 140, 0.3);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn:hover {
+    background-color: #3b4e68 !important; /* Darker blue-gray */
+    transform: translateY(-2px);
+  }
+  
+  .nav-link {
+    color: #212121 !important; /* Almost black text */
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .nav-link:hover {
+    background-color: #c5cbd0 !important; /* Light gray-blue hover */
+    color: #0d0d0d !important; /* Darker text on hover */
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #6c757d; /* Muted gray text */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  /* Card Styling */
+  .card-body {
+    background-color: #ffffff !important;
+    color: #333333 !important; /* Dark gray for text */
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card-body:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  .card-img-top {
+    height: 220px !important;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  /* Section Styling */
+  .book-div {
+    padding: 80px 0;
+    background-color: #e9ecef; /* Light gray background */
+  }
+  
+  /* Modal Styling */
+  .modal .modal-dialog {
     position: absolute;
     width: 100%;
-    right: 10px;
-    bottom: 10px;
     margin: 0;
-}
-     .modal .modal-dialog  {
     top: 10px;
     right: 10px;
-}
+    bottom: 10px;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+  
