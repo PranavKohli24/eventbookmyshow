@@ -15,8 +15,8 @@
                 @for (item of bookingList; track $index) {
                     <td>{{$index+1}}.</td>
                     <td>{{item.eventName}}</td>
-                    <td>hello</td>
-                    <!-- <td>{{item.startDate | date:'dd-MMM-yy'}}</td> -->
+                    <!-- <td>hello</td> -->
+                    <td>{{item.startDate | date:'dd-MMM-yy'}}</td>
                     <td>{{item.bookingNo}}</td>
                     <td>{{item.noOfTickets}}</td>
 
